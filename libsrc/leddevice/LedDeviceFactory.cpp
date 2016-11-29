@@ -38,6 +38,7 @@
 #include "LedDevicePhilipsHue.h"
 #include "LedDeviceTpm2.h"
 #include "LedDeviceAtmo.h"
+#include "LedDeviceKarate.h"
 #include "LedDeviceAdalightApa102.h"
 #include "LedDeviceAtmoOrb.h"
 
@@ -346,6 +347,15 @@ LedDevice * LedDeviceFactory::construct(const Json::Value & deviceConfig)
 		LedDeviceAtmo * deviceAtmo = new LedDeviceAtmo(output, rate);
 		deviceAtmo->open();
 		device = deviceAtmo;
+	}
+	else if (type == "karate")
+	{
+		const std::string output = deviceConfig["output"].asString();
+		const unsigned rate = 38400;
+
+		LedDeviceKarate* deviceKarate = new LedDeviceKarate(output, rate);
+		deviceKarate->open();
+		device = deviceKarate;
 	}
 #ifdef ENABLE_WS2812BPWM
 	else if (type == "ws2812b")

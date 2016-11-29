@@ -43,6 +43,7 @@ SET(Leddevice_HEADERS
 	${CURRENT_SOURCE_DIR}/LedDeviceHyperionUsbasp.h
 	${CURRENT_SOURCE_DIR}/LedDeviceTpm2.h
 	${CURRENT_SOURCE_DIR}/LedDeviceAtmo.h
+	${CURRENT_SOURCE_DIR}/LedDeviceKarate.h
 )
 
 SET(Leddevice_SOURCES
@@ -70,6 +71,7 @@ SET(Leddevice_SOURCES
 	${CURRENT_SOURCE_DIR}/LedDevicePhilipsHue.cpp
 	${CURRENT_SOURCE_DIR}/LedDeviceTpm2.cpp
 	${CURRENT_SOURCE_DIR}/LedDeviceAtmo.cpp
+	${CURRENT_SOURCE_DIR}/LedDeviceKarate.cpp
 )
 
 if(ENABLE_SPIDEV)
